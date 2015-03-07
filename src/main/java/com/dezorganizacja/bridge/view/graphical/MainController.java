@@ -1,14 +1,14 @@
-package com.dezorganizacja.bridge.ui.graphical;
+package com.dezorganizacja.bridge.view.graphical;
 
-import com.dezorganizacja.bridge.presenter.GamePresenter;
+import com.dezorganizacja.bridge.presenter.MainPresenter;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class MainController {
-    private GamePresenter presenter;
+    private MainPresenter presenter;
     @FXML private Label message;
 
-    public void setupStage(GamePresenter presenter) {
+    public void init(MainPresenter presenter) {
         this.presenter = presenter;
     }
 

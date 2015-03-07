@@ -2,10 +2,10 @@ package com.dezorganizacja.bridge.presenter;
 
 import com.dezorganizacja.bridge.domain.Message;
 
-public class GamePresenter {
+public class MainPresenter {
     private final Message message;
 
-    public GamePresenter(Message message) {
+    public MainPresenter(Message message) {
         this.message = message;
     }
 

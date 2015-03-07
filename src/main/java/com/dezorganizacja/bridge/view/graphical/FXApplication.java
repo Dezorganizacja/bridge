@@ -1,6 +1,6 @@
-package com.dezorganizacja.bridge.ui.graphical;
+package com.dezorganizacja.bridge.view.graphical;
 
-import com.dezorganizacja.bridge.presenter.GamePresenter;
+import com.dezorganizacja.bridge.presenter.MainPresenter;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,10 +8,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class FXApplication extends Application {
-    private static GamePresenter gamePresenter;
+    private static MainPresenter mainPresenter;
 
-    public static void setGamePresenter(GamePresenter gamePresenter) {
-        FXApplication.gamePresenter = gamePresenter;
+    public static void setMainPresenter(MainPresenter mainPresenter) {
+        FXApplication.mainPresenter = mainPresenter;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class FXApplication extends Application {
         stage.setScene(new Scene(root, 300, 275));
 
         MainController controller = loader.getController();
-        controller.setupStage(gamePresenter);
+        controller.init(mainPresenter);
 
         stage.show();
     }

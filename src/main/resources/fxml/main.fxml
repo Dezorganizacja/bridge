@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="307.0" prefWidth="460.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.dezorganizacja.bridge.ui.graphical.MainController">
+<AnchorPane prefHeight="307.0" prefWidth="460.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.dezorganizacja.bridge.view.graphical.MainController">
   <children>
     <Label fx:id="message" onMouseClicked="#clickLabel" text="Click me, click me!" layoutX="20.0" layoutY="20.0"  />
   </children>
