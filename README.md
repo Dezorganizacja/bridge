@@ -38,6 +38,13 @@ Be nice and patient.
 
 Try to address others' concerns. If they have doubts, your code is not clear enough. Strive to change that.
 
+### Language
+
+* Code, comments in code, commit names - must be in English
+* Pull Request titles - prefer English
+* Pull Request descriptions and comments, Trello tasks - Polish
+* other docs - prefer English
+
 ## Testing
 
 No idea.
