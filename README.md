@@ -65,6 +65,8 @@ Try to address others' concerns. If they have doubts, your code is not clear eno
 Tests are automatically run after running `mvn package`. To explicitly run tests execute
 `mvn test` command.
 
+To build project without running tests execute `mvn -Dmaven.test.skip=true package`.
+
 ## Authors
 
 * [Grzegorz Świrski](http://swirski.name)
