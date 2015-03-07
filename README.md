@@ -1,5 +1,7 @@
 # bridge
 
+[![Build Status](https://travis-ci.org/Dezorganizacja/bridge.svg)](https://travis-ci.org/Dezorganizacja/bridge)
+
 ## Tools
 * Java 8
 * JavaFX
