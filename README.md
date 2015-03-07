@@ -23,6 +23,7 @@ You can probably ignore these steps if you use proper IDE. :)
 4. Code is incorporated (merged) into `master` branch only after 2 code reviews (yes, I actually mean it). You need an "OK" from your peer and one random person (preferably more experienced than you).
 5. It's OK to spend a lot of time polishing your Pull Requests. It's much more productive to ease others' work, even if slows you down.
 6. Make sure you are listed under "Authors" section of this file. :)
+7. Once your branch is merged, delete it from GitHub
 
 ### Perfect feature/bugfix/pull request
 
