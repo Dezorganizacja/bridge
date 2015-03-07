@@ -1,5 +1,10 @@
 # bridge
 
+## Tools
+* Java 8
+* JavaFX
+* JUnit 4
+
 ## Setup
 
 ### IntelliJ setup
