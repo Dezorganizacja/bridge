@@ -19,8 +19,6 @@
 
     <jdkVersion>1.8</jdkVersion>
     <junitVersion>4.12</junitVersion>
-    <guiceVersion>3.0</guiceVersion>
-    <fx-guiceVersion>8.0.0</fx-guiceVersion>
   </properties>
 
   <dependencies>
@@ -29,16 +27,6 @@
       <artifactId>junit</artifactId>
       <version>${junitVersion}</version>
       <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.google.inject</groupId>
-      <artifactId>guice</artifactId>
-      <version>${guiceVersion}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.cathive.fx</groupId>
-      <artifactId>fx-guice</artifactId>
-      <version>${fx-guiceVersion}</version>
     </dependency>
   </dependencies>
 
