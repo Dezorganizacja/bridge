@@ -22,5 +22,7 @@ public class MainPresenter extends Observable {
 
     public void setStage(String stage) {
         this.stage = stage;
+        setChanged();
+        notifyObservers();
     }
 }
