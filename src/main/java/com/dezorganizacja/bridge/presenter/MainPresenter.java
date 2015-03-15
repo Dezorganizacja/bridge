@@ -2,7 +2,9 @@ package com.dezorganizacja.bridge.presenter;
 
 import com.dezorganizacja.bridge.domain.Message;
 
-public class MainPresenter {
+import java.util.Observable;
+
+public class MainPresenter extends Observable {
     private final Message message;
     private String stage;
 
