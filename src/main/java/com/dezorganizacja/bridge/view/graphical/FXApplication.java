@@ -15,6 +15,7 @@ import java.util.Observer;
 public class FXApplication extends Application implements Observer {
     private static MainPresenter mainPresenter;
     private static Stage stage;
+    private static String fxml;
 
     public static void setMainPresenter(MainPresenter mainPresenter) {
         FXApplication.mainPresenter = mainPresenter;
@@ -30,6 +31,10 @@ public class FXApplication extends Application implements Observer {
     private void _changeMainScene() {
         String programStage = mainPresenter.getStage();
         String fxml = ProgramStageMap.stageToFXML(programStage);
+
+        if (FXApplication.fxml != null && FXApplication.fxml.equals(fxml)) {
+            return;
+        }
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
         Parent root;
