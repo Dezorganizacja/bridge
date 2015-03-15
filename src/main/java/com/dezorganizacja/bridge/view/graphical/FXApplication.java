@@ -73,6 +73,8 @@ public class FXApplication extends Application implements Observer {
         switch (state) {
             case "loading":
                 return "/fxml/loading.fxml";
+            case "main":
+                return "/fxml/main.fxml";
         }
 
         throw new IllegalArgumentException("No such state: " + state);
