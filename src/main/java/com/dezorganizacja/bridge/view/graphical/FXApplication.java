@@ -23,6 +23,7 @@ public class FXApplication extends Application implements Observer {
     @Override
     public void start(Stage stage) throws Exception {
         FXApplication.stage = stage;
+        FXApplication.mainPresenter.addObserver(this);
         _changeMainScene();
     }
 
