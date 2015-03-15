@@ -9,8 +9,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 
-public class FXApplication extends Application {
+public class FXApplication extends Application implements Observer {
     private static MainPresenter mainPresenter;
     private static Stage stage;
 
@@ -52,5 +54,9 @@ public class FXApplication extends Application {
     public void changeMainScene() {
         // TODO thread safety
         Platform.runLater(this::_changeMainScene);
+    }
+
+    @Override
+    public void update(Observable observable, Object o) {
     }
 }
