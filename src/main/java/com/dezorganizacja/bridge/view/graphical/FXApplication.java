@@ -35,6 +35,7 @@ public class FXApplication extends Application implements Observer {
         if (FXApplication.fxml != null && FXApplication.fxml.equals(fxml)) {
             return;
         }
+        FXApplication.fxml = fxml;
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
         Parent root;
