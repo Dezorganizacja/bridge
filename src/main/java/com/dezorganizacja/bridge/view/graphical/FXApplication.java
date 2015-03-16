@@ -42,9 +42,7 @@ public class FXApplication extends Application implements Observer {
         try {
             root = loader.load();
         } catch (IOException e) {
-            System.err.println("error while loading " + fxml + " resource");
-            e.printStackTrace();
-            return;
+            throw new RuntimeException("error while loading " + fxml + " resource", e);
         }
 
         stage.setTitle("Bridge");
