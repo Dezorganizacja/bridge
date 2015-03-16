@@ -25,10 +25,10 @@ public class FXApplication extends Application implements Observer {
     public void start(Stage stage) throws Exception {
         FXApplication.stage = stage;
         FXApplication.mainPresenter.addObserver(this);
-        _changeMainScene();
+        loadMainScene();
     }
 
-    private void _changeMainScene() {
+    private void loadMainScene() {
         String programState = mainPresenter.getState();
         String fxml = stateToFXML(programState);
 
@@ -59,7 +59,7 @@ public class FXApplication extends Application implements Observer {
 
     public void changeMainScene() {
         // TODO thread safety
-        Platform.runLater(this::_changeMainScene);
+        Platform.runLater(this::loadMainScene);
     }
 
     @Override
