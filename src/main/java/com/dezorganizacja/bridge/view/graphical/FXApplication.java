@@ -57,7 +57,6 @@ public class FXApplication extends Application implements Observer {
     }
 
     public void changeMainScene() {
-        // TODO thread safety
         Platform.runLater(this::loadMainScene);
     }
 
