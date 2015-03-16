@@ -6,7 +6,7 @@ import java.util.Observable;
 
 public class MainPresenter extends Observable {
     private final Message message;
-    private String stage;
+    private String state;
 
     public MainPresenter(Message message) {
         this.message = message;
@@ -16,12 +16,12 @@ public class MainPresenter extends Observable {
         return this.message;
     }
 
-    public String getStage() {
-        return this.stage;
+    public String getState() {
+        return this.state;
     }
 
-    public void setStage(String stage) {
-        this.stage = stage;
+    public void setState(String state) {
+        this.state = state;
         setChanged();
         notifyObservers();
     }

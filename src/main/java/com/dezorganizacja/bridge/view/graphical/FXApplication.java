@@ -29,8 +29,8 @@ public class FXApplication extends Application implements Observer {
     }
 
     private void _changeMainScene() {
-        String programStage = mainPresenter.getStage();
-        String fxml = ProgramStageMap.stageToFXML(programStage);
+        String programState = mainPresenter.getState();
+        String fxml = ProgramStateMap.stateToFXML(programState);
 
         if (FXApplication.fxml != null && FXApplication.fxml.equals(fxml)) {
             return;
