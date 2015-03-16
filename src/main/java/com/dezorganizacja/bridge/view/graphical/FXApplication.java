@@ -30,7 +30,7 @@ public class FXApplication extends Application implements Observer {
 
     private void _changeMainScene() {
         String programState = mainPresenter.getState();
-        String fxml = ProgramStateMap.stateToFXML(programState);
+        String fxml = stateToFXML(programState);
 
         if (FXApplication.fxml != null && FXApplication.fxml.equals(fxml)) {
             return;
@@ -65,5 +65,18 @@ public class FXApplication extends Application implements Observer {
     @Override
     public void update(Observable observable, Object o) {
         changeMainScene();
+    }
+
+    private static String stateToFXML(String state) {
+        if (state == null) {
+            return "/fxml/loading.fxml";
+        }
+
+        switch (state) {
+            case "loading":
+                return "/fxml/loading.fxml";
+        }
+
+        throw new IllegalArgumentException("No such state: " + state);
     }
 }
