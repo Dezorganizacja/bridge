@@ -14,8 +14,8 @@ import java.util.Observer;
 
 public class FXApplication extends Application implements Observer {
     private static MainPresenter mainPresenter;
-    private static Stage stage;
-    private static String fxml;
+    private Stage stage;
+    private String fxml;
 
     public static void setMainPresenter(MainPresenter mainPresenter) {
         FXApplication.mainPresenter = mainPresenter;
@@ -23,7 +23,7 @@ public class FXApplication extends Application implements Observer {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXApplication.stage = stage;
+        this.stage = stage;
         FXApplication.mainPresenter.addObserver(this);
         loadMainScene();
     }
@@ -32,10 +32,10 @@ public class FXApplication extends Application implements Observer {
         String programState = mainPresenter.getState();
         String fxml = stateToFXML(programState);
 
-        if (FXApplication.fxml != null && FXApplication.fxml.equals(fxml)) {
+        if (this.fxml != null && this.fxml.equals(fxml)) {
             return;
         }
-        FXApplication.fxml = fxml;
+        this.fxml = fxml;
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
         Parent root;
