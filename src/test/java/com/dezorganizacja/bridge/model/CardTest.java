@@ -48,4 +48,5 @@ public class CardTest {
         Card c2 = new Card(Card.Rank.TEN, Card.Suit.DIAMONDS);
         assertEquals(c1.hashCode(), c2.hashCode());
     }
+
 }
