@@ -4,6 +4,7 @@ import com.dezorganizacja.bridge.domain.Message;
 import com.dezorganizacja.bridge.presenter.MainPresenter;
 import com.dezorganizacja.bridge.view.View;
 import com.dezorganizacja.bridge.view.graphical.GraphicalView;
+import com.dezorganizacja.bridge.view.text.TextView;
 
 public class Bridge {
     public static void main(String[] args) {
@@ -11,6 +12,8 @@ public class Bridge {
         MainPresenter presenter = new MainPresenter(message);
 
         View view = new GraphicalView();
+        View view1 = new TextView();
         view.show(presenter, args);
+        view1.show(presenter, args);
     }
 }
