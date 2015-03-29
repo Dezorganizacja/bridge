@@ -74,7 +74,11 @@ public class FXApplication extends Application implements Observer {
             case "loading":
                 return "/fxml/loading.fxml";
             case "main":
-                return "/fxml/main.fxml";
+                return "/fxml/mainMenu.fxml";
+            case "credits":
+                return "/fxml/mainMenu.fxml";
+            case "":
+                return "/fxml/mainMenu.fxml";
         }
 
         throw new IllegalArgumentException("No such state: " + state);
