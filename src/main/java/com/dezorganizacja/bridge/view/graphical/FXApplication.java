@@ -21,6 +21,10 @@ public class FXApplication extends Application implements Observer {
         FXApplication.mainPresenter = mainPresenter;
     }
 
+    public static MainPresenter getMainPresenter() {
+        return mainPresenter;
+    }
+
     @Override
     public void start(Stage stage) throws Exception {
         this.stage = stage;
