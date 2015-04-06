@@ -11,9 +11,13 @@ public class Bridge {
         Message message = new Message("Such a great game!");
         MainPresenter presenter = new MainPresenter(message);
 
-        View view = new GraphicalView();
-        View view1 = new TextView();
+        View view;
+        if (args.length >= 1 && args[0].equals("text")) {
+            view = new TextView();
+        } else {
+            view = new GraphicalView();
+        }
+
         view.show(presenter, args);
-        view1.show(presenter, args);
     }
 }
