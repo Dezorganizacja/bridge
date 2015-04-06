@@ -54,7 +54,7 @@ public class FXApplication extends Application implements Observer {
 
         Controller controller = loader.getController();
         if (controller != null) {
-            controller.init(mainPresenter);
+            controller.init();
         }
 
         stage.show();
