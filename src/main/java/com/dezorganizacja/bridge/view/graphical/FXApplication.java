@@ -4,8 +4,10 @@ import com.dezorganizacja.bridge.presenter.MainPresenter;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -46,6 +48,7 @@ public class FXApplication extends Application implements Observer {
         }
 
         stage.setTitle("Bridge");
+
         stage.setScene(new Scene(root));
 
         Controller controller = loader.getController();
@@ -74,7 +77,13 @@ public class FXApplication extends Application implements Observer {
             case "loading":
                 return "/fxml/loading.fxml";
             case "main":
-                return "/fxml/main.fxml";
+                return "/fxml/mainMenu.fxml";
+            case "credits":
+                return "/fxml/credits.fxml";
+            case "bidding":
+                return "/fxml/bidding.fxml";
+            case "game":
+                return "/fxml/game.fxml";
         }
 
         throw new IllegalArgumentException("No such state: " + state);

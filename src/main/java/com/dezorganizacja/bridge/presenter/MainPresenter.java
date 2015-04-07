@@ -25,4 +25,8 @@ public class MainPresenter extends Observable {
         setChanged();
         notifyObservers();
     }
+
+    public void exitNow() {
+        System.exit(0);
+    }
 }
