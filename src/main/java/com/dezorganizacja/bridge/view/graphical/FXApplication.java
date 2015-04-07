@@ -51,7 +51,6 @@ public class FXApplication extends Application implements Observer {
 
         stage.setScene(new Scene(root));
 
-
         Controller controller = loader.getController();
         if (controller != null) {
             controller.init(mainPresenter);
