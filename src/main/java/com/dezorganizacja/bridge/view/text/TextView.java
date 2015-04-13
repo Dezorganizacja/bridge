@@ -5,6 +5,8 @@ import com.dezorganizacja.bridge.view.View;
 
 public class TextView implements View {
     public void show(MainPresenter presenter, String[] args) {
-        System.out.println("Hello world!");
+        TerminalApplication.setMainPresenter(presenter);
+        TerminalApplication application = new TerminalApplication ();
+        application.launch();
     }
 }
