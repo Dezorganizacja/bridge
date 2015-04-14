@@ -1,0 +1,11 @@
+.author {
+	-fx-font: 22px "Sans-Serif";
+	-fx-padding: 5;
+	-fx-text-fill: lightgray;
+}
+
+.codePiece {
+	-fx-font: 30px "Sans-Serif";
+	-fx-padding: 40 0 10 0;
+	-fx-text-fill: lightgray;
+}
