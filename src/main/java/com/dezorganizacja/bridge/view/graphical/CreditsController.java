@@ -24,6 +24,7 @@ import static java.lang.Thread.sleep;
 public class CreditsController extends Controller {
 
     public AnchorPane creditsPane;
+    public VBox creditsBox;
 
     public void closeCredits(ActionEvent actionEvent) {
         presenter.setState("main");
@@ -33,24 +34,9 @@ public class CreditsController extends Controller {
     public void init(MainPresenter presenter) {
         super.init(presenter);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/movingCredits.fxml"));
-        VBox creditsBox;
-        try {
-            creditsBox = loader.load();
-        } catch (IOException e) {
-            throw new RuntimeException("error while loading /fxml/movingCredits.fxml resource", e);
-        }
-
-
-        creditsPane.setBackground(new Background(new BackgroundFill(Color.BLACK, CornerRadii.EMPTY, Insets.EMPTY)));
-
-
-
-        creditsPane.getChildren().add(creditsBox);
-
         Path path = new Path();
-        path.getElements().add(new MoveTo(300,creditsPane.getHeight()+creditsBox.getPrefHeight()/2+100)); // sth like window size, dunno if it's fixed or not
-        path.getElements().add(new LineTo(300,-creditsBox.getPrefHeight()/2-100));
+        path.getElements().add(new MoveTo(300,creditsBox.getPrefHeight()/2+100)); // sth like window size, dunno if it's fixed or not
+        path.getElements().add(new LineTo(300,-creditsPane.getHeight()-creditsBox.getPrefHeight()/2-100));
 
         PathTransition pathTransition = new PathTransition();
         pathTransition.setDuration(Duration.millis(20000));
@@ -60,7 +46,6 @@ public class CreditsController extends Controller {
         pathTransition.setCycleCount(1);
         pathTransition.play();
         pathTransition.setOnFinished(event -> presenter.setState("main"));
-
     }
 }
 

@@ -9,3 +9,7 @@
 	-fx-padding: 40 0 10 0;
 	-fx-text-fill: lightgray;
 }
+
+.creditsPane {
+    -fx-background-color: black;
+}
