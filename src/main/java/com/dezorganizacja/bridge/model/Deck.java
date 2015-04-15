@@ -30,16 +30,14 @@ public class Deck {
     }
 
     public Card getTopCard() {
-        if(getRemainingCardsNumber() == 0)
-            return null;
-
         Card card = cards.get(0);
         cards.remove(0);
         return card;
     }
 
     public void giveCardsToPlayer(Player p) {
-        for(int i = 0; i < 13; i++)
+        for(int i = 0; i < 13; i++) {
             p.addCard(getTopCard());
+        }
     }
 }

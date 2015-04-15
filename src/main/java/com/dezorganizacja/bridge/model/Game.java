@@ -17,8 +17,6 @@ public class Game {
     }
 
     public Player getPlayer(int index) {
-        if(index > 4 || index <=0)
-            return null;
         return players.get(--index);
     }
 
