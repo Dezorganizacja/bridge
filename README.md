@@ -72,3 +72,4 @@ To build project without running tests execute `mvn -Dmaven.test.skip=true packa
 * [Grzegorz Świrski](http://swirski.name)
 * Marek Rusinowski
 * Wiktor Tendera
+* Michał Ziobro
