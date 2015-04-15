@@ -11,10 +11,10 @@ public class GameTest {
         Player p1 = new Player("Maniek"), p2 = new Player("Janek"),
                 p3 = new Player("Wacek"), p4 = new Player("Klocek");
         Game g = new Game(p1, p2, p3, p4);
-        assertEquals(g.getPlayer1(), p1);
-        assertEquals(g.getPlayer4(), p4);
+        assertEquals(g.getPlayer(1), p1);
+        assertEquals(g.getPlayer(4), p4);
         g.start();
-        assertEquals(g.getPlayer4().getCards().size(), 13);
-        assertEquals(g.getPlayer2().getCards().size(), 13);
+        assertEquals(g.getPlayer(2).getCards().size(), 13);
+        assertEquals(g.getPlayer(3).getCards().size(), 13);
     }
 }
