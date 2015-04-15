@@ -37,4 +37,9 @@ public class Deck {
         cards.remove(0);
         return card;
     }
+
+    public void giveCardsToPlayer(Player p) {
+        for(int i = 0; i < 13; i++)
+            p.addCard(getTopCard());
+    }
 }
