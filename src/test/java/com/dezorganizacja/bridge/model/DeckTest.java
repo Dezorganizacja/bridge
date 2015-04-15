@@ -35,7 +35,7 @@ public class DeckTest {
         }
     }
 
-    @Test
+    @Test(expected=IndexOutOfBoundsException.class)
     public void emptyDeck() {
         Deck deck = new Deck();
         Card top = null;
@@ -43,7 +43,6 @@ public class DeckTest {
             top = deck.getTopCard();
         }
         top = deck.getTopCard();
-        assertNull(top);
     }
 
 
