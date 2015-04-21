@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="569.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.dezorganizacja.bridge.view.graphical.CreditsController">
-  <children>
-    <Button id="" layoutX="207.0" layoutY="206.0" mnemonicParsing="false" onAction="#closeCredits" prefHeight="47.000099999997474" prefWidth="156.0" text="Close credits" />
+<?import java.net.URL?>
+<AnchorPane styleClass="creditsPane" id="AnchorPane" fx:id="creditsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="459.0" prefWidth="569.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.dezorganizacja.bridge.view.graphical.CreditsController">
+    <VBox fx:id="creditsBox" alignment="TOP_CENTER" layoutX="14.0" layoutY="459" prefHeight="372.0" prefWidth="235.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+        <children>
+            <Label styleClass="codePiece" text="GUI" />
+                <Label styleClass="author" text="Michał Ziobro" />
+                <Label styleClass="author" text="Bartłomiej Puget" />
+                <Label styleClass="author" text="Dominika Salawa" />
+                <Label styleClass="author" text="Maciej Wachulec" />
+            <Label styleClass="codePiece" text="OPS" />
+                <Label styleClass="author" text="Marek Rusinowski" />
+                <Label styleClass="author" text="Grzegorz Świrski" />
+            <Label styleClass="codePiece" text="TUI" />
+                <Label styleClass="author" text="Maciej Woźniak" />
+        </children>
+
+    </VBox>
+    <children>
+    <Button id="" layoutX="426.0" layoutY="414.0" mnemonicParsing="false" onAction="#closeCredits" prefHeight="31.0" prefWidth="129.0" text="Close credits" />
   </children>
+    <stylesheets>
+        <URL value="@../css/credits.css" />
+    </stylesheets>
 </AnchorPane>
