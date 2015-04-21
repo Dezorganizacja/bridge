@@ -5,6 +5,8 @@ import com.dezorganizacja.bridge.view.View;
 
 public class TextView implements View {
     public void show(MainPresenter presenter, String[] args) {
-        System.out.println("Hello world!");
+        System.out.println("hello world");
+        CommandLine mainCommandLine = new CommandLine();
+        mainCommandLine.startCommandLine();
     }
 }
