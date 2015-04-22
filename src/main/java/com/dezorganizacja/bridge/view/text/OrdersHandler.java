@@ -17,10 +17,10 @@ public class OrdersHandler {
     private Map<String, Command> menuEntries = new HashMap<>();
     private Map<String, String> menuDetails = new HashMap<>();
     {
-        menuEntries.put("h", (ArrayList<String> args)->{this.help(args);});
-        menuEntries.put("help", (ArrayList<String> args)->{this.help(args);});
-        menuEntries.put("credits", (ArrayList<String> args)->{this.credits(args);});
-        menuEntries.put("menu", (ArrayList<String> args)->{this.print_menu(args);});
+        menuEntries.put("h", this::help);
+        menuEntries.put("help", this::help);
+        menuEntries.put("credits", this::credits);
+        menuEntries.put("menu", this::print_menu);
 
         menuDetails.put("h", "Help system");
         menuDetails.put("help", "Help system");
