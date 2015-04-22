@@ -2,6 +2,8 @@ package com.dezorganizacja.bridge.view.text;
 
 import com.dezorganizacja.bridge.presenter.MainPresenter;
 
+import java.util.ArrayList;
+
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Scanner;
@@ -34,17 +36,22 @@ public class TerminalApplication implements Observer {
     }
 
     public void startHandling () {
-        Scanner scanner = new Scanner(System.in);
-        while (true) {
-            String command = scanner.nextLine();
-            if (command.equals("end"))
-                break;
-            else
-                handler.handleOrder(command);
+        Scanner input = new Scanner(System.in);
+        handler.dispatchOrder("menu", new ArrayList<>());
+        while(input.hasNextLine()) {
+            ArrayList<String> args = parse(input.nextLine());
+            handler.dispatchOrder(args.get(0), args);
         }
     }
+    
+    private ArrayList<String> parse(String line) {
+        String[] words = line.split(" ");
+        ArrayList<String> args = new ArrayList<>();
+        for(String tmp : words) args.add(tmp);
+        return args;
+    }
 
-    public void showWelcome () {
+    private void showWelcome () {
         System.out.println("Welcome to bridge !");
         System.out.println("Type \"start\" to start the game.");
         System.out.println("Type \"end\" any time if you want to quit the game.");
