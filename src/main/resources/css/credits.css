@@ -13,3 +13,9 @@
 .creditsPane {
     -fx-background-color: black;
 }
+
+.title {
+	-fx-font: 50px "Sans-Serif";
+	-fx-padding: 50 0 50 0;
+	-fx-text-fill: lightgray;
+}
