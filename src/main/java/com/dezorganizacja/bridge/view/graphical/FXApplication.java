@@ -50,6 +50,8 @@ public class FXApplication extends Application implements Observer {
         stage.setTitle("Bridge");
 
         stage.setScene(new Scene(root));
+        stage.setMinHeight(300);
+        stage.setMinWidth(500);
 
         Controller controller = loader.getController();
         if (controller != null) {
