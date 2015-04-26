@@ -36,8 +36,8 @@ public class CreditsController extends Controller {
         super.init(presenter);
 
         Path path = new Path();
-        path.getElements().add(new MoveTo(creditsPane.getWidth() / 2, creditsPane.getHeight() + creditsBox.getHeight() / 2));
-        path.getElements().add(new LineTo(creditsPane.getWidth() / 2, -creditsBox.getHeight()/2));
+        path.getElements().add(new MoveTo(200, creditsPane.getHeight() + creditsBox.getHeight() / 2));
+        path.getElements().add(new LineTo(200, -creditsBox.getHeight()/2));
 
         PathTransition pathTransition = new PathTransition();
         pathTransition.setDuration(Duration.millis(20000));
