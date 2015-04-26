@@ -79,7 +79,7 @@ public class FXApplication extends Application implements Observer {
             case "main":
                 return "/fxml/mainMenu.fxml";
             case "credits":
-                return "/fxml/credits.fxml";
+                return "/fxml/credits_wrapper.fxml";
             case "bidding":
                 return "/fxml/bidding.fxml";
             case "game":

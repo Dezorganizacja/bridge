@@ -7,6 +7,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
@@ -23,7 +24,7 @@ import static java.lang.Thread.sleep;
 
 public class CreditsController extends Controller {
 
-    public AnchorPane creditsPane;
+    public BorderPane creditsPane;
     public VBox creditsBox;
 
     public void closeCredits(ActionEvent actionEvent) {
@@ -35,8 +36,8 @@ public class CreditsController extends Controller {
         super.init(presenter);
 
         Path path = new Path();
-        path.getElements().add(new MoveTo(300,creditsBox.getPrefHeight()/2+100)); // sth like window size, dunno if it's fixed or not
-        path.getElements().add(new LineTo(300,-creditsPane.getHeight()-creditsBox.getPrefHeight()/2-100));
+        path.getElements().add(new MoveTo(creditsPane.getWidth() / 2, creditsPane.getHeight() + creditsBox.getHeight() / 2));
+        path.getElements().add(new LineTo(creditsPane.getWidth() / 2, -creditsBox.getHeight()/2));
 
         PathTransition pathTransition = new PathTransition();
         pathTransition.setDuration(Duration.millis(20000));

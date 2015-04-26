@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<BorderPane fx:id="creditsPane" maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" styleClass="creditsPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dezorganizacja.bridge.view.graphical.CreditsController">
+   <center>
+      <fx:include fx:id="creditsBox" source="credits.fxml" />
+   </center>
+   <stylesheets>
+      <URL value="@../css/credits.css" />
+   </stylesheets>
+   <bottom>
+      <Button alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#closeCredits" text="Close credits" BorderPane.alignment="BOTTOM_RIGHT" />
+   </bottom>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>
