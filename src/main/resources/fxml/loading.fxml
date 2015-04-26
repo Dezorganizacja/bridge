@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 
-<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dezorganizacja.bridge.view.graphical.LoadingController">
-   <children>
-      <fx:include source="side_menu.fxml"/>
-      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dezorganizacja.bridge.view.graphical.LoadingController">
+   <center>
+      <VBox alignment="CENTER">
          <children>
             <Label text="Bridge">
                <font>
@@ -18,5 +19,8 @@
             <Button fx:id="button_enough" mnemonicParsing="false" onAction="#clickEnoughButton" text="Enough" />
          </children>
       </VBox>
-   </children>
-</HBox>
+   </center>
+   <left>
+      <fx:include source="side_menu.fxml" />
+   </left>
+</BorderPane>
