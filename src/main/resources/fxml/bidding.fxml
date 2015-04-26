@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dezorganizacja.bridge.view.graphical.BiddingController">
+<BorderPane minHeight="300.0" minWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dezorganizacja.bridge.view.graphical.BiddingController">
    <left>
     <fx:include source="side_menu.fxml" />
    </left>

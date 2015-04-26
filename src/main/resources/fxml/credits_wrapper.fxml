@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import java.net.URL?>
 
-<BorderPane fx:id="creditsPane" maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" styleClass="creditsPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dezorganizacja.bridge.view.graphical.CreditsController">
+<BorderPane fx:id="creditsPane" maxHeight="300.0" maxWidth="500.0" minHeight="300.0" minWidth="500.0" styleClass="creditsPane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dezorganizacja.bridge.view.graphical.CreditsController">
    <center>
       <fx:include fx:id="creditsBox" source="credits.fxml" />
    </center>
