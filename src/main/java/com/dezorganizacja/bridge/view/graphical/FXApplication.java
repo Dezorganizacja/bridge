@@ -31,6 +31,8 @@ public class FXApplication extends Application implements Observer {
     }
 
     private void loadMainScene() {
+        StageProperties stageProperties = new StageProperties(stage);
+
         String programState = mainPresenter.getState();
         String fxml = stateToFXML(programState);
 
@@ -59,6 +61,7 @@ public class FXApplication extends Application implements Observer {
             controller.init(mainPresenter);
         }
 
+        stageProperties.configureStage(stage);
         stage.show();
     }
 
