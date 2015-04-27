@@ -1,6 +1,6 @@
 package com.dezorganizacja.bridge.view.text;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,7 +10,7 @@ import java.util.Map;
 
 
 interface Command {
-    void runCommand(ArrayList<String> args);
+    void runCommand(List<String> args);
 }
 
 public class OrdersHandler {
@@ -28,15 +28,15 @@ public class OrdersHandler {
         menuDetails.put("menu", "Displays the possible prompt commands");
     }
 
-    private void help(ArrayList<String> args) {
+    private void help(List<String> args) {
         print("Some help should go here");
     }
 
-    private void credits(ArrayList<String> args) {
+    private void credits(List<String> args) {
         print("Some credits should go here");
     }
 
-    private void print_menu(ArrayList<String> args) {
+    private void print_menu(List<String> args) {
         for(String menuPosition : menuDetails.keySet()) {
             print(menuPosition + " - " + menuDetails.get(menuPosition));
         }
@@ -46,7 +46,7 @@ public class OrdersHandler {
         System.out.println(toPrint);
     }
 
-    public void dispatchOrder(String commad, ArrayList<String> args) {
+    public void dispatchOrder(String commad, List<String> args) {
         if(!menuEntries.containsKey(commad)) {
             print("No such command: " + commad);
         } else {

@@ -3,6 +3,7 @@ package com.dezorganizacja.bridge.view.text;
 import com.dezorganizacja.bridge.presenter.MainPresenter;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -39,14 +40,14 @@ public class TerminalApplication implements Observer {
         Scanner input = new Scanner(System.in);
         handler.dispatchOrder("menu", new ArrayList<>());
         while(input.hasNextLine()) {
-            ArrayList<String> args = parse(input.nextLine());
+            List<String> args = parse(input.nextLine());
             handler.dispatchOrder(args.get(0), args);
         }
     }
     
-    private ArrayList<String> parse(String line) {
+    private List<String> parse(String line) {
         String[] words = line.split(" ");
-        ArrayList<String> args = new ArrayList<>();
+        List<String> args = new ArrayList<>();
         for(String tmp : words) args.add(tmp);
         return args;
     }
