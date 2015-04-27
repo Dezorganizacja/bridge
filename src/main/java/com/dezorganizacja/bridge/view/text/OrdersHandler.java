@@ -14,8 +14,8 @@ interface Command {
 }
 
 public class OrdersHandler {
-    private Map<String, Command> menuEntries = new HashMap<>();
-    private Map<String, String> menuDetails = new HashMap<>();
+    private final Map<String, Command> menuEntries = new HashMap<>();
+    private final Map<String, String> menuDetails = new HashMap<>();
     {
         menuEntries.put("h", this::help);
         menuEntries.put("help", this::help);
