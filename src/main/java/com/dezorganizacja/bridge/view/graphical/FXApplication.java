@@ -56,12 +56,13 @@ public class FXApplication extends Application implements Observer {
         stage.setMinHeight(root_pane.getMinHeight());
         stage.setMinWidth(root_pane.getMinWidth());
 
+        stageProperties.configureStage(stage);
+
         Controller controller = loader.getController();
         if (controller != null) {
             controller.init(mainPresenter);
         }
 
-        stageProperties.configureStage(stage);
         stage.show();
     }
 
