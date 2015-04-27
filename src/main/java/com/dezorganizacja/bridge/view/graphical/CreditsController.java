@@ -3,6 +3,7 @@ package com.dezorganizacja.bridge.view.graphical;
 import com.dezorganizacja.bridge.presenter.MainPresenter;
 import javafx.animation.PathTransition;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -36,11 +37,11 @@ public class CreditsController extends Controller {
         super.init(presenter);
 
         Path path = new Path();
-        path.getElements().add(new MoveTo(200, creditsPane.getHeight() + creditsBox.getHeight() / 2));
-        path.getElements().add(new LineTo(200, -creditsBox.getHeight()/2));
+        path.getElements().add(new MoveTo(200, creditsPane.getHeight()/2 + creditsBox.getPrefHeight()));
+        path.getElements().add(new LineTo(200, -creditsBox.getPrefHeight()));
 
         PathTransition pathTransition = new PathTransition();
-        pathTransition.setDuration(Duration.millis(20000));
+        pathTransition.setDuration(Duration.millis(creditsBox.getPrefHeight()*32));
         pathTransition.setPath(path);
         pathTransition.setOrientation(PathTransition.OrientationType.NONE);
         pathTransition.setNode(creditsBox);
