@@ -22,6 +22,8 @@ public class OrdersHandler {
         menuEntries.put("credits", this::credits);
         menuEntries.put("menu", this::print_menu);
 
+        menuDetails.put("start", "Start game");
+        menuDetails.put("end", "Quit game");
         menuDetails.put("h", "Help system");
         menuDetails.put("help", "Help system");
         menuDetails.put("credits", "Credits");
@@ -46,13 +48,11 @@ public class OrdersHandler {
         System.out.println(toPrint);
     }
 
-    public void dispatchOrder(String commad, List<String> args) {
-        if(!menuEntries.containsKey(commad)) {
-            print("No such command: " + commad);
+    public void dispatchOrder(String command, List<String> args) {
+        if(!menuEntries.containsKey(command)) {
+            print("No such command: " + command);
         } else {
-            menuEntries.get(commad).runCommand(args);
+            menuEntries.get(command).runCommand(args);
         }
     }
-
-
 }
