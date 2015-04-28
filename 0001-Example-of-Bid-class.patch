@@ -1,0 +1,87 @@
+From 32367beb61501c9a5bfc5cbc5f168b92d4f34a1c Mon Sep 17 00:00:00 2001
+From: Larhard <larhard@gmail.com>
+Date: Sun, 26 Apr 2015 20:07:17 +0200
+Subject: [PATCH 1/2] Example of Bid class
+
+---
+ .../java/com/dezorganizacja/bridge/model/Bid.java  | 38 ++++++++++++++++++++++
+ .../com/dezorganizacja/bridge/model/BidType.java   |  5 +++
+ .../com/dezorganizacja/bridge/model/Color.java     |  9 +++++
+ 3 files changed, 52 insertions(+)
+ create mode 100644 src/main/java/com/dezorganizacja/bridge/model/Bid.java
+ create mode 100644 src/main/java/com/dezorganizacja/bridge/model/BidType.java
+ create mode 100644 src/main/java/com/dezorganizacja/bridge/model/Color.java
+
+diff --git a/src/main/java/com/dezorganizacja/bridge/model/Bid.java b/src/main/java/com/dezorganizacja/bridge/model/Bid.java
+new file mode 100644
+index 0000000..388b3b6
+--- /dev/null
++++ b/src/main/java/com/dezorganizacja/bridge/model/Bid.java
+@@ -0,0 +1,38 @@
++package com.dezorganizacja.bridge.model;
++
++public class Bid {
++    private BidType type;
++    private Integer count;
++    private Color color;
++
++    public BidType getType() {
++        return type;
++    }
++
++    public Integer getCount() {
++        return count;
++    }
++
++    public Color getColor() {
++        return color;
++    }
++
++    Bid(BidType type) {
++        this.type = type;
++        if (this.type == BidType.CARD) {
++            throw new IllegalArgumentException();
++        }
++    }
++
++    Bid(BidType type, Integer count, Color color) {
++        this.type = type;
++        if (this.type == BidType.CARD) {
++            this.count = count;
++            this.color = color;
++        }
++    }
++
++    public static void main(String[] args) {
++        System.out.println(new Bid(BidType.CONTRA).getColor());
++    }
++}
+diff --git a/src/main/java/com/dezorganizacja/bridge/model/BidType.java b/src/main/java/com/dezorganizacja/bridge/model/BidType.java
+new file mode 100644
+index 0000000..4f5d8f1
+--- /dev/null
++++ b/src/main/java/com/dezorganizacja/bridge/model/BidType.java
+@@ -0,0 +1,5 @@
++package com.dezorganizacja.bridge.model;
++
++public enum BidType {
++    CARD, PASS, CONTRA, RECONTRA;
++}
+diff --git a/src/main/java/com/dezorganizacja/bridge/model/Color.java b/src/main/java/com/dezorganizacja/bridge/model/Color.java
+new file mode 100644
+index 0000000..7d4ad0a
+--- /dev/null
++++ b/src/main/java/com/dezorganizacja/bridge/model/Color.java
+@@ -0,0 +1,9 @@
++package com.dezorganizacja.bridge.model;
++
++public enum Color {
++    CLUBS,
++    DIAMONDS,
++    HEARTS,
++    SPADES,
++    NT;
++}
+-- 
+1.9.1
+

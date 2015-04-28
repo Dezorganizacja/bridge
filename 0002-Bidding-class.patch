@@ -1,0 +1,113 @@
+From 46bdd60a1d0a5a44cc9d5aa8277d75f9fb7170bb Mon Sep 17 00:00:00 2001
+From: vereena42 <vereena42@gmail.com>
+Date: Sun, 26 Apr 2015 21:13:33 +0200
+Subject: [PATCH 2/2] Bidding class
+
+---
+ .../com/dezorganizacja/bridge/model/Bidding.java   | 94 ++++++++++++++++++++++
+ 1 file changed, 94 insertions(+)
+ create mode 100644 src/main/java/com/dezorganizacja/bridge/model/Bidding.java
+
+diff --git a/src/main/java/com/dezorganizacja/bridge/model/Bidding.java b/src/main/java/com/dezorganizacja/bridge/model/Bidding.java
+new file mode 100644
+index 0000000..f712b2e
+--- /dev/null
++++ b/src/main/java/com/dezorganizacja/bridge/model/Bidding.java
+@@ -0,0 +1,94 @@
++package com.dezorganizacja.bridge.model;
++
++import java.util.ArrayList;
++
++/**
++ * Created by vereena on 26.04.15.
++ */
++public class Bidding {
++    Game game;
++    Bid maxBid;
++    Bid [] playersLastBid=new Bid[4];
++    int currentPlayer;
++    boolean biddingOn;
++
++    public Bidding(Game game)
++    {
++        this.game=game;
++        currentPlayer=0;
++        biddingOn=true;
++    }
++
++    private boolean isGreaterFromMax(Bid bid)
++    {
++        if(maxBid==null)
++            return true;
++        if(bid.getCount().compareTo(maxBid.getCount())>0)
++            return true;
++        else if(bid.getCount().equals(maxBid.getCount()))
++        {
++            if(bid.getColor().compareTo(maxBid.getColor())>0)
++                return true;
++        }
++        return false;
++    }
++
++    private int howManyPasses()
++    {
++        int counter=0;
++        for(int i=0;i<4;i++)
++        {
++            if(playersLastBid[0].getType()==BidType.PASS)
++                counter++;
++        }
++        return counter;
++    }
++
++    public boolean set_bid(Bid bid)
++    {
++        if(bid.getType()==BidType.CARD && isGreaterFromMax(bid))
++        {
++            maxBid=bid;
++            playersLastBid[currentPlayer]=maxBid;
++            currentPlayer=(currentPlayer+1)%4;
++            return true;
++        }
++        else if(bid.getType()==BidType.CARD)
++            return false;
++        else if(bid.getType()==BidType.PASS)
++        {
++            playersLastBid[currentPlayer]=bid;
++            if(howManyPasses()==3)
++            {
++                biddingOn=false;
++            }
++            return true;
++        }
++        else if(bid.getType()==BidType.CONTRA)
++        {
++            if(playersLastBid[(currentPlayer-1)%4].getType()==BidType.CARD)
++            {
++                playersLastBid[currentPlayer]=bid;
++                return true;
++            }
++            else return false;
++        }
++        else if(bid.getType()==BidType.RECONTRA)
++        {
++            if(playersLastBid[(currentPlayer-1)%4].getType()==BidType.CONTRA)
++            {
++                playersLastBid[currentPlayer]=bid;
++                return true;
++            }
++            else return false;
++        }
++        return true;
++    }
++
++    public Player getCurrentPlayer()
++    {
++        return game.getPlayer(currentPlayer+1);
++    }
++
++    public boolean isBiddingOn(){return this.biddingOn;}
++}
+-- 
+1.9.1
+
