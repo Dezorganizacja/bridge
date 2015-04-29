@@ -46,7 +46,7 @@ public class TerminalApplication implements Observer {
     }
     
     private List<String> parse(String line) {
-        String[] words = line.split(" ");
+        String[] words = line.split("\\s+");
         List<String> args = new ArrayList<>();
         for(String tmp : words) args.add(tmp);
         return args;
