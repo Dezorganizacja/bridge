@@ -11,10 +11,10 @@ import java.util.Map;
 public class OrdersHandler {
     private final Map<String, Command> menuEntries = new HashMap<>();
     {
-        menuEntries.put("h", Command.newCommand(this::help, ()->{return "Help system";}));
-        menuEntries.put("help", Command.newCommand(this::help, ()->{return "Help system";}));
-        menuEntries.put("credits", Command.newCommand(this::credits, ()->{return "Credits";}));
-        menuEntries.put("menu", Command.newCommand(this::print_menu, ()->{return "Display the possible prompt commands";}));
+        menuEntries.put("h", Commands.newCommand(this::help, "Help system"));
+        menuEntries.put("help", Commands.newCommand(this::help, "Help system"));
+        menuEntries.put("credits", Commands.newCommand(this::credits, "Credits"));
+        menuEntries.put("menu", Commands.newCommand(this::print_menu, "Display the possible prompt commands"));
     }
 
     private void help(List<String> args) {

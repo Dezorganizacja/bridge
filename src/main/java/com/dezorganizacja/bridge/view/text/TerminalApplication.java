@@ -36,7 +36,7 @@ public class TerminalApplication implements Observer {
         }
     }
     
-    private List<String> parse(String line) {
+    private static List<String> parse(String line) {
         String[] words = line.split("\\s+");
         return Arrays.asList(words);
     }
