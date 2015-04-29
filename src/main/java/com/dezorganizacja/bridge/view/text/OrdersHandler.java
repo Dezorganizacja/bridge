@@ -35,13 +35,11 @@ public class OrdersHandler {
         System.out.println(toPrint);
     }
 
-    public void dispatchOrder(String commad, List<String> args) {
-        if(!menuEntries.containsKey(commad)) {
-            print("No such command: " + commad);
+    public void dispatchOrder(String command, List<String> args) {
+        if(!menuEntries.containsKey(command)) {
+            print("No such command: " + command);
         } else {
-            menuEntries.get(commad).runCommand(args);
+            menuEntries.get(command).runCommand(args);
         }
     }
-
-
 }

@@ -8,22 +8,17 @@ import java.util.*;
  * Created by maciek on 13.04.15.
  */
 public class TerminalApplication implements Observer {
-    private static MainPresenter mainPresenter;
+    private MainPresenter mainPresenter;
     private OrdersHandler handler = new OrdersHandler ();
     private String state;
 
-    public static void setMainPresenter(MainPresenter mainPresenter) {
-        TerminalApplication.mainPresenter = mainPresenter;
-    }
-
-    public void setState(String state) {
-        this.state = state;
+    public void setMainPresenter(MainPresenter mainPresenter) {
+        this.mainPresenter = mainPresenter;
     }
 
     public void launch () {
-        TerminalApplication.mainPresenter.addObserver(this);
-        this.showWelcome();
-        this.setState("loading");
+        mainPresenter.addObserver(this);
+        System.out.println("Welcome to bridge !");
         this.startHandling ();
     }
 
@@ -33,6 +28,7 @@ public class TerminalApplication implements Observer {
 
     public void startHandling () {
         Scanner input = new Scanner(System.in);
+        System.out.println("Available commands:");
         handler.dispatchOrder("menu", new ArrayList<>());
         while(input.hasNextLine()) {
             List<String> args = parse(input.nextLine());
@@ -45,13 +41,7 @@ public class TerminalApplication implements Observer {
         return Arrays.asList(words);
     }
 
-    private void showWelcome () {
-        System.out.println("Welcome to bridge !");
-        System.out.println("Type \"start\" to start the game.");
-        System.out.println("Type \"end\" any time if you want to quit the game.");
-    }
-
-    public void changeState () {
+    private void changeState () {
         String programState = mainPresenter.getState();
         this.state = programState;
     }
