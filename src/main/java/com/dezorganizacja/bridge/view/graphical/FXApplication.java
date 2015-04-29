@@ -31,6 +31,8 @@ public class FXApplication extends Application implements Observer {
     }
 
     private void loadMainScene() {
+        StageProperties stageProperties = new StageProperties(stage);
+
         String programState = mainPresenter.getState();
         String fxml = stateToFXML(programState);
 
@@ -50,6 +52,11 @@ public class FXApplication extends Application implements Observer {
         stage.setTitle("Bridge");
 
         stage.setScene(new Scene(root));
+        Pane root_pane = loader.getRoot();
+        stage.setMinHeight(root_pane.getMinHeight());
+        stage.setMinWidth(root_pane.getMinWidth());
+
+        stageProperties.configureStage(stage);
 
         Controller controller = loader.getController();
         if (controller != null) {
@@ -79,7 +86,7 @@ public class FXApplication extends Application implements Observer {
             case "main":
                 return "/fxml/mainMenu.fxml";
             case "credits":
-                return "/fxml/credits.fxml";
+                return "/fxml/credits_wrapper.fxml";
             case "bidding":
                 return "/fxml/bidding.fxml";
             case "game":

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 
 
-<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="207.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dezorganizacja.bridge.view.graphical.SideMenuController">
+<VBox alignment="TOP_CENTER" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dezorganizacja.bridge.view.graphical.SideMenuController">
    <children>
       <Label text="Side Menu">
          <font>
