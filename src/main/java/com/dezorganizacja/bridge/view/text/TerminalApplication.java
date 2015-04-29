@@ -2,12 +2,7 @@ package com.dezorganizacja.bridge.view.text;
 
 import com.dezorganizacja.bridge.presenter.MainPresenter;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import java.util.Observable;
-import java.util.Observer;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by maciek on 13.04.15.
@@ -47,9 +42,7 @@ public class TerminalApplication implements Observer {
     
     private List<String> parse(String line) {
         String[] words = line.split("\\s+");
-        List<String> args = new ArrayList<>();
-        for(String tmp : words) args.add(tmp);
-        return args;
+        return Arrays.asList(words);
     }
 
     private void showWelcome () {
