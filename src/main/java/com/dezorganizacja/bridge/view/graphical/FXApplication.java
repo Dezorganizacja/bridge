@@ -28,7 +28,6 @@ public class FXApplication extends Application implements Observer {
         this.stage = stage;
         FXApplication.mainPresenter.addObserver(this);
         loadMainScene();
-        loadMainScene();
     }
 
     private void loadMainScene() {
